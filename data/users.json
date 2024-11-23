@@ -1,0 +1,37 @@
+[
+    {
+        "_id": {
+            "$oid": "6731f439df41ccb4f0ca6916"
+        },
+        "login": "pantolin",
+        "password": "pantolin"
+    },
+    {
+        "_id": {
+            "$oid": "6731f464df41ccb4f0ca6917"
+        },
+        "login": "saka92",
+        "password": "saka92"
+    },
+    {
+        "_id": {
+            "$oid": "6731f477df41ccb4f0ca6918"
+        },
+        "login": "agarrido",
+        "password": "agarrido"
+    },
+    {
+        "_id": {
+            "$oid": "6731f487df41ccb4f0ca6919"
+        },
+        "login": "chari89",
+        "password": "chari89"
+    },
+    {
+        "_id": {
+            "$oid": "6731f48fdf41ccb4f0ca691a"
+        },
+        "login": "mario_pzk",
+        "password": "mario_pzk"
+    }
+]

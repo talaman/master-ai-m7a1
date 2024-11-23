@@ -1,0 +1,51 @@
+[
+    {
+        "usuario": "pantolin",
+        "valoraciones": {
+            "COBRA KAI": 5,
+            "CAFE CON AROMA DE MUJER": 3,
+            "SANDMAN": 4,
+            "ENOLA HOLMES": 4
+        }
+    },
+    {
+        "usuario": "saka92",
+        "valoraciones": {
+            "COBRA KAI": 3,
+            "CAFE CON AROMA DE MUJER": 1,
+            "SANDMAN": 2,
+            "ENOLA HOLMES": 3,
+            "STRANGER THINGS": 3
+        }
+    },
+    {
+        "usuario": "agarrido",
+        "valoraciones": {
+            "COBRA KAI": 4,
+            "CAFE CON AROMA DE MUJER": 3,
+            "SANDMAN": 4,
+            "ENOLA HOLMES": 3,
+            "STRANGER THINGS": 5
+        }
+    },
+    {
+        "usuario": "chari89",
+        "valoraciones": {
+            "COBRA KAI": 3,
+            "CAFE CON AROMA DE MUJER": 3,
+            "SANDMAN": 1,
+            "ENOLA HOLMES": 5,
+            "STRANGER THINGS": 4
+        }
+    },
+    {
+        "usuario": "mario_pzk",
+        "valoraciones": {
+            "COBRA KAI": 1,
+            "CAFE CON AROMA DE MUJER": 5,
+            "SANDMAN": 5,
+            "ENOLA HOLMES": 2,
+            "STRANGER THINGS": 1
+        }
+    }
+]

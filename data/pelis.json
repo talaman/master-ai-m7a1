@@ -1,0 +1,61 @@
+[{
+    "_id": {
+        "$oid": "6731f4c1df41ccb4f0ca691b"
+    },
+    "nombre": "COBRA KAI",
+    "resumen": "Enemigos acérrimos. Dojos rivales. Sangre nueva. Daniel y Johnny reviven viejas rivalidades en esta secuela de las películas de «Karate Kid».",
+    "protagonistas": "Ralph Macchio, William Zabka, Xolo Maridueña",
+    "creadopor": "oshHeald, Jon Hurwitz, Hayden Schlossberg",
+    "año": "2018",
+    "img": "cobrakai.jpg",
+    "teaser": "cobrakaiteaser.png"
+},
+ 
+{
+    "_id": {
+        "$oid": "6731f4d2df41ccb4f0ca691c"
+    },
+    "nombre": "CAFE CON AROMA DE MUJER",
+    "resumen": "Este remake de la telenovela de 1994 narra la historia de amor entre Gaviota, una agricultora, y Sebastián, el vástago de una familia aristocrática productora de café.",
+    "protagonistas": "William Levy, Laura Londoño, Carmen Villalobos",
+    "creadopor": "",
+    "año": "2021",
+    "img": "cafeconaromademujer.jpg",
+    "teaser": "cafeteaser.png"
+},
+{
+    "_id": {
+        "$oid": "6731f4e2df41ccb4f0ca691d"
+    },
+    "nombre": "SANDMAN",
+    "resumen": "Después de pasar años encarcelado, Morfeo (el Rey de los Sueños) emprende un viaje por diferentes mundos para encontrar lo que le fue arrebatado y recuperar su poder.\n",
+    "protagonistas": "Tom Sturridge, Boyd Holbrook, PattonOswalt",
+    "creadopor": "",
+    "año": "2022",
+    "img": "sandman.jpg",
+    "teaser": "sandmanteaser.png"
+},
+{
+    "_id": {
+        "$oid": "6731f4f5df41ccb4f0ca691e"
+    },
+    "nombre": "ENOLAHOLMES",
+    "resumen": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.\n",
+    "protagonistas": "Millie Bobby Brown, Henry Cavill, Sam Claflin",
+    "creadopor": "",
+    "año": "2020",
+    "img": "enola.jpg",
+    "teaser": "enolateaser.png"
+},
+{
+    "_id": {
+        "$oid": "6731f501df41ccb4f0ca691f"
+    },
+    "nombre": "ENOLAHOLMES",
+    "resumen": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.\n",
+    "protagonistas": "Millie Bobby Brown, Henry Cavill, Sam Claflin",
+    "creadopor": "",
+    "año": "2020",
+    "img": "enola.jpg",
+    "teaser": "enolateaser.png"
+}]

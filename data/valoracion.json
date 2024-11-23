@@ -1,0 +1,114 @@
+[
+    {
+        "_id": {
+            "$oid": "672a77969b6c1c8c610c6303"
+        },
+        "usuario": "pantolin",
+        "valoraciones": {
+            "COBRA KAI": {
+                "$numberInt": "5"
+            },
+            "CAFE CON AROMA DE MUJER": {
+                "$numberInt": "3"
+            },
+            "SANDMAN": {
+                "$numberInt": "4"
+            },
+            "ENOLA HOLMES": {
+                "$numberInt": "4"
+            }
+        }
+    },
+    {
+        "_id": {
+            "$oid": "672a77e79b6c1c8c610c6304"
+        },
+        "usuario": "saka92",
+        "valoraciones": {
+            "COBRA KAI": {
+                "$numberInt": "3"
+            },
+            "CAFE CON AROMA DE MUJER": {
+                "$numberInt": "1"
+            },
+            "SANDMAN": {
+                "$numberInt": "2"
+            },
+            "ENOLA HOLMES": {
+                "$numberInt": "3"
+            },
+            "STRANGER THINGS": {
+                "$numberInt": "3"
+            }
+        }
+    },
+    {
+        "_id": {
+            "$oid": "672a78029b6c1c8c610c6305"
+        },
+        "usuario": "agarrido",
+        "valoraciones": {
+            "COBRA KAI": {
+                "$numberInt": "4"
+            },
+            "CAFE CON AROMA DE MUJER": {
+                "$numberInt": "3"
+            },
+            "SANDMAN": {
+                "$numberInt": "4"
+            },
+            "ENOLA HOLMES": {
+                "$numberInt": "3"
+            },
+            "STRANGER THINGS": {
+                "$numberInt": "5"
+            }
+        }
+    },
+    {
+        "_id": {
+            "$oid": "672a782e9b6c1c8c610c6306"
+        },
+        "usuario": "chari89",
+        "valoraciones": {
+            "COBRA KAI": {
+                "$numberInt": "3"
+            },
+            "CAFE CON AROMA DE MUJER": {
+                "$numberInt": "3"
+            },
+            "SANDMAN": {
+                "$numberInt": "1"
+            },
+            "ENOLA HOLMES": {
+                "$numberInt": "5"
+            },
+            "STRANGER THINGS": {
+                "$numberInt": "4"
+            }
+        }
+    },
+    {
+        "_id": {
+            "$oid": "672a78669b6c1c8c610c6307"
+        },
+        "usuario": "mario_pzk",
+        "valoraciones": {
+            "COBRA KAI": {
+                "$numberInt": "1"
+            },
+            "CAFE CON AROMA DE MUJER": {
+                "$numberInt": "5"
+            },
+            "SANDMAN": {
+                "$numberInt": "5"
+            },
+            "ENOLA HOLMES": {
+                "$numberInt": "2"
+            },
+            "STRANGER THINGS": {
+                "$numberInt": "1"
+            }
+        }
+    }
+]
