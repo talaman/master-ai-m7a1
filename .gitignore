@@ -162,4 +162,4 @@ cython_debug/
 #.idea/
 practica.pdf
 app/asistente/.rasa/
-app/asistente/models/
+# app/asistente/models/
