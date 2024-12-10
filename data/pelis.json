@@ -51,11 +51,11 @@
     "_id": {
         "$oid": "6731f501df41ccb4f0ca691f"
     },
-    "nombre": "ENOLAHOLMES",
-    "resumen": "Enola Holmes, una intrépida joven que busca a su madre, utiliza su brillante instinto investigador para superar a su hermano Sherlock y ayudar a un lord en su fuga.\n",
-    "protagonistas": "Millie Bobby Brown, Henry Cavill, Sam Claflin",
+    "nombre": "STRANGER THINGS",
+    "resumen": "Cuando un niño desaparece, sus amigos, su familia y la policía local comienzan una búsqueda desesperada. Mientras buscan respuestas, descubren un misterio sobrenatural.",
+    "protagonistas": "Winona Ryder, David Harbour, Finn Wolfhard",
     "creadopor": "",
-    "año": "2020",
-    "img": "enola.jpg",
-    "teaser": "enolateaser.png"
+    "año": "2016",
+    "img": "stranger.jpg",
+    "teaser": "strangerteaser.png"
 }]
