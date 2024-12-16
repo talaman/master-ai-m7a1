@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe</title>
+</head>
+<body>
+    <h1>Informe de Películas</h1>
+    <h3>Número de películas: {{ pelis|length }}</h3>
+    <h3>Primeras 5:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Show ID</th>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Country</th>
+                <th>Date Added</th>
+                <th>Release Year</th>
+                <th>Rating</th>
+                <th>Duration</th>
+                <th>Listed In</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for peli in pelis[:5].to_dict('records') %}
+            <tr>
+                <td>{{ peli.show_id }}</td>
+                <td>{{ peli.type }}</td>
+                <td>{{ peli.title }}</td>
+                <td>{{ peli.director }}</td>
+                <td>{{ peli.country }}</td>
+                <td>{{ peli.date_added }}</td>
+                <td>{{ peli.release_year }}</td>
+                <td>{{ peli.rating }}</td>
+                <td>{{ peli.duration }}</td>
+                <td>{{ peli.listed_in }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Listed in: {{ listed_in_count|length }}</h3>    
+    <h3>Top 20 listed in con más peliculas: </h3>
+    <ul>
+        {% for key, value in listed_in_count[:20].items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Paises: {{ countries_count|length }}</h3>
+    <h3>Top 20 paises con más peliculas y series:</h3>
+    <ul>
+        {% for key, value in countries_count[:20].items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Valoraciones de Usuarios:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Película</th>
+                <th>Valoración</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for valoracion in valoraciones %}
+            <tr>
+                <td>{{ valoracion[0] }}</td>
+                <td>{{ valoracion[1] }}</td>
+                <td>{{ valoracion[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Valoración media de las películas: {{ media_valoracion }}</h3>
+    <h3>Suma total de las valoraciones: {{ suma_valoracion }}</h3>
+    <h3>Valoración media por película:</h3>
+    <ul>
+        {% for pelicula, media in valoracion_media_peliculas.items() %}
+        <li>{{ pelicula }}: {{ media }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

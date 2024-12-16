@@ -3,11 +3,110 @@ from pymongo import MongoClient
 import os
 import math
 import statistics
+import pandas as pd
 
 app = Flask(__name__)
 
 connectionString = os.getenv("MONGO_CONNECTIONSTRING")
 
+@app.route("/informe",methods=['GET'])
+def informe():
+    pelis = carga_peliculas()
+    listed_in = get_listed_in(pelis)
+    listed_in_count = get_listed_in_count(pelis)
+    countries_count = get_countries_count(pelis)
+    valoraciones = get_valoraciones()
+    media_valoracion = get_valoracion_media(valoraciones)
+    suma_valoracion = get_valoracion_suma(valoraciones)
+    valoracion_media_peliculas = get_valoracion_media_peliculas(valoraciones)
+    
+    
+    return render_template("informe.html", 
+    pelis = pelis, 
+    listed_in_count = listed_in_count,
+    countries_count = countries_count,
+    valoraciones = valoraciones,
+    media_valoracion = media_valoracion,
+    suma_valoracion = suma_valoracion,
+    valoracion_media_peliculas = valoracion_media_peliculas)
+
+def carga_peliculas():
+    # carga dataframe de peliculas en data/netflix_titles.csv, la primera fila es el header
+    df = pd.read_csv('data/netflix_titles.csv',header=0)
+    return df
+
+def get_listed_in(df):
+    # obtiene la columna listed_in y la convierte en una lista de strings
+    listed_in = df['listed_in'].tolist()
+    # devide por comas cada string de la lista y lo convierte en una sola lista con valores unicos
+    listed_in = list(set([x.strip() for sublist in [x.split(',') for x in listed_in] for x in sublist]))
+    # ordena la lista por mayor cantidad de valores
+    listed_in.sort(key=lambda x: len(x), reverse=True)
+    return listed_in
+
+def get_listed_in_count(df):
+    # obtiene la columna listed_in y la convierte en una lista de strings
+    listed_in = df['listed_in'].tolist()
+    # devide por comas cada string de la lista y lo convierte en una sola lista
+    listed_in = [x.strip() for sublist in [x.split(',') for x in listed_in] for x in sublist]
+    # cuenta la cantidad de veces que aparece cada valor en la lista
+    listed_in = pd.Series(listed_in).value_counts()
+    return listed_in
+
+def get_countries_count(df):
+    # obtiene la columna country y la convierte en una lista de strings
+    country = df['country'].dropna().tolist()
+    # divide por comas cada string de la lista y lo convierte en una sola lista
+    country = [x.strip() for sublist in [x.split(',') for x in country] for x in sublist]
+    # cuenta la cantidad de veces que aparece cada valor en la lista
+    country = pd.Series(country).value_counts()
+    return country
+
+def get_valoraciones():
+    # hace join de las tablas peliculas y valoraciones desde mongo
+    # devuelve un dataframe con las valoraciones de cada usuario por pelicula
+    # debe mostrar 3 campos: usuarios.login, peliculas.nombre, valoraciones.valoraciones (dependiendo del usuario y la pelicula que es el nombre del key)
+    # ejemplo: [['pantolin','pelicula1',5],['pantolin','pelicula2',4],['pantolin','pelicula3',3],['pantolin','pelicula4',2],['pantolin','pelicula5',1]]	
+    client = MongoClient (connectionString)
+    db = client['filmnet']
+    collection = db['usuarios']
+    x = collection.find({})
+    usuarios = []
+    for elem in x:
+        usuarios.append(elem['login'])
+    collection = db['valoracion']
+    filmnet = list(collection.find())
+    valoraciones = []
+    for elem in filmnet:
+        for key, value in elem['valoraciones'].items():
+            valoraciones.append([elem['usuario'],key,value])
+    return valoraciones
+
+def get_valoracion_media(valoraciones):
+    # calcula la media total de todas las valoraciones, devuelve un float
+    return statistics.mean([x[2] for x in valoraciones])
+
+def get_valoracion_suma(valoraciones):
+    # calcula la suma total de todas las valoraciones, devuelve un int
+    return sum([x[2] for x in valoraciones])
+ 
+def get_valoracion_media_peliculas(valoraciones):
+    # calcula la media de todas las valoraciones por pelicula, devuelve un diccionario con el nombre de la pelicula y la media
+    z = {}
+    for elem in valoraciones:
+        if elem[1] in z:
+            z[elem[1]].append(elem[2])
+        else:
+            z[elem[1]] = [elem[2]]
+    for key, value in z.items():
+        z[key] = statistics.mean(value)
+
+    # orderna el diccionario por mayor valor
+    z = dict(sorted(z.items(), key=lambda item: item[1], reverse=True))
+    return z
+
+
+    
 
 @app.route("/",methods=['POST','GET'])
 def validar():
