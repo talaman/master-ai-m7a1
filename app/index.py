@@ -12,7 +12,6 @@ connectionString = os.getenv("MONGO_CONNECTIONSTRING")
 @app.route("/informe",methods=['GET'])
 def informe():
     pelis = carga_peliculas()
-    listed_in = get_listed_in(pelis)
     listed_in_count = get_listed_in_count(pelis)
     countries_count = get_countries_count(pelis)
     valoraciones = get_valoraciones()
@@ -63,10 +62,6 @@ def get_countries_count(df):
     return country
 
 def get_valoraciones():
-    # hace join de las tablas peliculas y valoraciones desde mongo
-    # devuelve un dataframe con las valoraciones de cada usuario por pelicula
-    # debe mostrar 3 campos: usuarios.login, peliculas.nombre, valoraciones.valoraciones (dependiendo del usuario y la pelicula que es el nombre del key)
-    # ejemplo: [['pantolin','pelicula1',5],['pantolin','pelicula2',4],['pantolin','pelicula3',3],['pantolin','pelicula4',2],['pantolin','pelicula5',1]]	
     client = MongoClient (connectionString)
     db = client['filmnet']
     collection = db['usuarios']
